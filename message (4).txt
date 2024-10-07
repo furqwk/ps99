@@ -1,0 +1,178 @@
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(38, 79, 79)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.127084985, 0, 0.19718793, 0)
+Frame.Size = UDim2.new(0, 267, 0, 125)
+
+UICorner.Parent = Frame
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(26, 53, 53)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0711610466, 0, 0.400000006, 0)
+TextBox.Size = UDim2.new(0, 158, 0, 37)
+TextBox.Font = Enum.Font.FredokaOne
+TextBox.Text = "Pet name to spawn"
+TextBox.TextColor3 = Color3.fromRGB(38, 79, 79)
+TextBox.TextSize = 14.000
+
+UICorner_2.Parent = TextBox
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(47, 130, 66)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.662921369, 0, 0.344000012, 0)
+TextButton.Size = UDim2.new(0, 64, 0, 50)
+TextButton.Font = Enum.Font.FredokaOne
+TextButton.Text = "SPAWN"
+TextButton.TextColor3 = Color3.fromRGB(38, 79, 79)
+TextButton.TextSize = 14.000
+
+UICorner_3.Parent = TextButton
+
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.123595506, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "PS99 Pet Spawner"
+TextLabel.TextColor3 = Color3.fromRGB(26, 53, 53)
+TextLabel.TextSize = 23.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(38, 79, 79)
+
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
+
+local function discordggmailstealers() -- Visual pet changer function
+	local script = Instance.new('LocalScript', TextButton)
+
+	local button = script.Parent
+	
+	local function JaneqIsntASkid()
+		local Pets = require(game:GetService("ReplicatedStorage").Library.Directory.Pets)
+	-- edit fromPet bellow to the pet you wanna visually change
+		local fromPet = "Huge Elegant Eagle"
+		local toPet = "Titanic Soul Owl"
+	
+		for i, v in pairs(Pets[fromPet] or {}) do
+			Pets[fromPet][i] = nil
+		end
+		for i, v in pairs(Pets[toPet] or {}) do
+			Pets[fromPet][i] = v
+		end
+	
+		-- edit the 1e3b1d3992b84c3aaa124d7829f4c2a6 to the pet id of the pet you wanna change
+
+		game:GetService("ReplicatedStorage").Network.Pets_Favorite:FireServer("1e3b1d3992b84c3aaa124d7829f4c2a6")
+	
+		local message = require(game.ReplicatedStorage.Library.Client.Message)
+		message.Error("Your pet spawned!")
+	end
+	
+	button.MouseButton1Click:Connect(JaneqIsntASkid)
+end
+coroutine.wrap(discordggmailstealers)()
+local function JaneqIsSoSigma() -- Smooth drag function
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+
+	-- join discord.gg/mailstealers
+	-- this script was made by notjaneq on discord
+	-- join discord.gg/mailstealers
+	-- this script was made by notjaneq on discord
+	-- join discord.gg/mailstealers
+	-- this script was made by notjaneq on discord
+	-- join discord.gg/mailstealers
+	-- this script was made by notjaneq on discord
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end
+coroutine.wrap(JaneqIsSoSigma)()
+
+-- join discord.gg/mailstealers
+-- this script was made by notjaneq on discord
